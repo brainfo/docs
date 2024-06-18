@@ -322,10 +322,7 @@
       margin-right: 0; 
     }
   </style>
-  <meta name="mermaid-theme" content="neutral">
-  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="index_files/libs/quarto-diagram/mermaid-postprocess-shim.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -404,30 +401,115 @@
 </section>
 <section id="he-slide-and-image-processing" class="slide level2">
 <h2>HE slide and image processing</h2>
-<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A((sample incl. \n chorionic, BP))-- FFPE H&amp;E --&gt; B(5um slide) -- x40 scan --&gt; C(image) -- partition --&gt; D(1600x1200 pixel)
-    subgraph c[image processing]
-        direction TB
-        I[sclale \n 0.1109um/pixel]--&gt; J[select mean channel values \n between 10, 245] --&gt; E(tissue patches)
-    end
-    D --&gt; c 
-    subgraph a[nuclei localisation]
-        direction TB
-        K[overlap of 200] --&gt; F(nuclei location)
-    end
-    E --&gt; a
-    subgraph b[cell classification]
-        direction TB
-        G(200x200 \n centred on nucleus) ---&gt; H[load \n in memory]
-    end
-    F --&gt; b
-    D --&gt; b
-</pre>
+<svg aria-roledescription="flowchart-v2" role="graphics-document document" viewbox="-8 -8 1616.5 396" style="; display: block; margin: auto auto auto auto" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-1" height="480">
+<style>#mermaid-figure-1{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-1 .error-icon{fill:#552222;}#mermaid-figure-1 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-1 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-1 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-1 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-1 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-1 .marker.cross{stroke:#333333;}#mermaid-figure-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-1 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-figure-1 .cluster-label text{fill:#333;}#mermaid-figure-1 .cluster-label span,#mermaid-figure-1 p{color:#333;}#mermaid-figure-1 .label text,#mermaid-figure-1 span,#mermaid-figure-1 p{fill:#333;color:#333;}#mermaid-figure-1 .node rect,#mermaid-figure-1 .node circle,#mermaid-figure-1 .node ellipse,#mermaid-figure-1 .node polygon,#mermaid-figure-1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-figure-1 .flowchart-label text{text-anchor:middle;}#mermaid-figure-1 .node .label{text-align:center;}#mermaid-figure-1 .node.clickable{cursor:pointer;}#mermaid-figure-1 .arrowheadPath{fill:#333333;}#mermaid-figure-1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-figure-1 .flowchart-link{stroke:#333333;fill:none;}#mermaid-figure-1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-figure-1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-figure-1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-figure-1 .cluster text{fill:#333;}#mermaid-figure-1 .cluster span,#mermaid-figure-1 p{color:#333;}#mermaid-figure-1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-figure-1 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g><marker orient="auto" markerheight="12" markerwidth="12" markerunits="userSpaceOnUse" refy="5" refx="10" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerheight="12" markerwidth="12" markerunits="userSpaceOnUse" refy="5" refx="0" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="11" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="-1" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="12" viewbox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="-1" viewbox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"><g id="a" class="cluster default flowchart-label"><rect height="117" width="367" y="0" x="959" ry="0" rx="0" style=""></rect><g transform="translate(1076, 0)" class="cluster-label"><foreignobject height="22" width="133">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">nuclei localisation</span>
+</div>
+</foreignobject></g></g><g id="c" class="cluster default flowchart-label"><rect height="133.5" width="702" y="137" x="425" ry="0" rx="0" style=""></rect><g transform="translate(714.5, 137)" class="cluster-label"><foreignobject height="22" width="123">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">image processing</span>
+</div>
+</foreignobject></g></g></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0" d="M112,324L121.91666666666667,324C131.83333333333334,324,151.66666666666666,324,171.5,324C191.33333333333334,324,211.16666666666666,324,221.08333333333334,324L231,324"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" id="L-B-C-0" d="M315,324L324.1666666666667,324C333.3333333333333,324,351.6666666666667,324,370,324C388.3333333333333,324,406.6666666666667,324,425.75,324C444.8333333333333,324,464.6666666666667,324,474.5833333333333,324L484.5,324"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-D" id="L-C-D-0" d="M542.5,324L557.6666666666666,324C572.8333333333334,324,603.1666666666666,324,635.3333333333334,324C667.5,324,701.5,324,718.5,324L735.5,324"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-I LE-J" id="L-I-J-0" d="M577,201.5L586.4166666666666,201.5C595.8333333333334,201.5,614.6666666666666,201.5,633.5,201.5C652.3333333333334,201.5,671.1666666666666,201.5,680.5833333333334,201.5L690,201.5"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-J LE-E" id="L-J-E-0" d="M909,201.5L913.1666666666666,201.5C917.3333333333334,201.5,925.6666666666666,201.5,934,201.5C942.3333333333334,201.5,950.6666666666666,201.5,959.1666666666666,202.015873015873C967.6666666666666,202.53174603174602,976.3333333333334,203.56349206349205,980.6666666666666,204.0793650793651L985,204.5952380952381"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-K LE-F" id="L-K-F-0" d="M1102,53.5L1106.1666666666667,53.5C1110.3333333333333,53.5,1118.6666666666667,53.5,1127,53.5C1135.3333333333333,53.5,1143.6666666666667,53.5,1152,53.97892720306513C1160.3333333333333,54.457854406130274,1168.6666666666667,55.41570881226054,1172.8333333333333,55.89463601532568L1177,56.37356321839081"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-c" id="L-D-c-0" d="M827.0706371191136,305.5L879.2313019390582,270.5"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-a" id="L-E-a-0" d="M1101,211.5L1105.3333333333333,211.5C1109.6666666666667,211.5,1118.3333333333333,211.5,1125.6666666666667,195.75C1133,180,1139,148.5,1142,132.75L1145,117"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-b" id="L-F-b-0" d="M1301,63.5L1305.1666666666667,63.5C1309.3333333333333,63.5,1317.6666666666667,63.5,1326,63.5C1334.3333333333333,63.5,1342.6666666666667,63.5,1351,67.52980535279805C1359.3333333333333,71.55961070559611,1367.6666666666667,79.61922141119221,1371.8333333333333,83.64902676399028L1376,87.67883211678833"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-b" id="L-D-b-0" d="M863.5,324L875.25,324C887,324,910.5,324,926.4166666666666,324C942.3333333333334,324,950.6666666666666,324,968.8333333333334,324C987,324,1015,324,1043,324C1071,324,1099,324,1117.1666666666667,324C1135.3333333333333,324,1143.6666666666667,324,1162.3333333333333,324C1181,324,1210,324,1239,324C1268,324,1297,324,1315.6666666666667,324C1334.3333333333333,324,1342.6666666666667,324,1351,320.10705596107056C1359.3333333333333,316.2141119221411,1367.6666666666667,308.42822384428223,1371.8333333333333,304.5352798053528L1376,300.64233576642334"></path></g><g class="edgeLabels"><g transform="translate(171.5, 324)" class="edgeLabel"><g transform="translate(-34.5, -11)" class="label"><foreignobject height="22" width="69">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel">FFPE H&amp;E</span>
+</div>
+</foreignobject></g></g><g transform="translate(370, 324)" class="edgeLabel"><g transform="translate(-30, -11)" class="label"><foreignobject height="22" width="60">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel">x40 scan</span>
+</div>
+</foreignobject></g></g><g transform="translate(633.5, 324)" class="edgeLabel"><g transform="translate(-31.5, -11)" class="label"><foreignobject height="22" width="63">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel">partition</span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g></g><g class="nodes"><g transform="translate(1368.5, 54)" class="root"><g class="clusters"><g id="b" class="cluster default flowchart-label"><rect height="268" width="224" y="8" x="8" ry="0" rx="0" style=""></rect><g transform="translate(57, 8)" class="cluster-label"><foreignobject height="22" width="126">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">cell classification</span>
+</div>
+</foreignobject></g></g></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-H" id="L-G-H-0" d="M120,92L120,96.16666666666667C120,100.33333333333333,120,108.66666666666667,120,117C120,125.33333333333333,120,133.66666666666666,120,142C120,150.33333333333334,120,158.66666666666666,120,167C120,175.33333333333334,120,183.66666666666666,120,187.83333333333334L120,192"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g></g><g class="nodes"><g transform="translate(120, 221.5)" id="flowchart-H-52" class="node default default flowchart-label"><rect height="59" width="92" y="-29.5" x="-46" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-38.5, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="77">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">load <br> in memory</span>
+</div>
+</foreignobject></g></g><g transform="translate(120, 62.5)" id="flowchart-G-51" class="node default default flowchart-label"><rect height="59" width="154" y="-29.5" x="-77" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-69.5, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="139">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">200x200 <br> centred on nucleus</span>
+</div>
+</foreignobject></g></g></g></g><g transform="translate(1239, 63.5)" id="flowchart-F-48" class="node default default flowchart-label"><rect height="37" width="124" y="-18.5" x="-62" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-54.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="109">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">nuclei location</span>
+</div>
+</foreignobject></g></g><g transform="translate(1043, 53.5)" id="flowchart-K-47" class="node default default flowchart-label"><rect height="37" width="118" y="-18.5" x="-59" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-51.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="103">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">overlap of 200</span>
+</div>
+</foreignobject></g></g><g transform="translate(1043, 211.5)" id="flowchart-E-44" class="node default default flowchart-label"><rect height="37" width="116" y="-18.5" x="-58" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-50.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="101">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">tissue patches</span>
+</div>
+</foreignobject></g></g><g transform="translate(799.5, 201.5)" id="flowchart-J-43" class="node default default flowchart-label"><rect height="59" width="219" y="-29.5" x="-109.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-102, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="204">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">select mean channel values <br> between 10, 245</span>
+</div>
+</foreignobject></g></g><g transform="translate(513.5, 201.5)" id="flowchart-I-42" class="node default default flowchart-label"><rect height="59" width="127" y="-29.5" x="-63.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-56, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="112">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">sclale <br> 0.1109um/pixel</span>
+</div>
+</foreignobject></g></g><g transform="translate(56, 324)" id="flowchart-A-38" class="node default default flowchart-label"><circle height="59" width="112" r="56" ry="0" rx="0" style=""></circle><g transform="translate(-48.5, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="97">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">sample incl.&nbsp;<br> chorionic, BP</span>
+</div>
+</foreignobject></g></g><g transform="translate(273, 324)" id="flowchart-B-39" class="node default default flowchart-label"><rect height="37" width="84" y="-18.5" x="-42" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-34.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="69">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">5um slide</span>
+</div>
+</foreignobject></g></g><g transform="translate(513.5, 324)" id="flowchart-C-40" class="node default default flowchart-label"><rect height="37" width="58" y="-18.5" x="-29" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-21.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="43">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">image</span>
+</div>
+</foreignobject></g></g><g transform="translate(799.5, 324)" id="flowchart-D-41" class="node default default flowchart-label"><rect height="37" width="128" y="-18.5" x="-64" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-56.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="113">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">1600x1200 pixel</span>
+</div>
+</foreignobject></g></g></g></g></g>
+</svg>
 </div>
 <p></p></figure><p></p>
 </div>
@@ -442,30 +524,123 @@
 </section>
 <section id="nuclei-localisation" class="slide level2">
 <h2>Nuclei localisation</h2>
-<div class="cell" data-reveal="true" data-fig-height="800" data-fig-width="600" data-layout-align="center">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart LR
-    subgraph a[training]
-    A((data from \n image processing \n module))--&gt; D[RetinaNet \n ResNet-101] --&gt; B(nuclei bounding box) --&gt; C((centroid \n coordinate))
-    end
-    subgraph b[finetune parameters]
-        direction BT
-        E(Coco weights) --&gt; D
-        F(40 epoches) --&gt; D
-        G[Adam optimiser] --&gt; D
-        H[focal loss] --&gt; D
-        I[lr e-4, \n 0.5 decay/20 epoches] --&gt; D
-    end
-    subgraph c[model selection]
-        direction BT
-        J(manual labelled \n coordinate) &lt;--&gt; C
-        J --&gt; K{distance\n&lt;3.3} --&gt; L(F1)
-    end
-    b ==&gt; c
-</pre>
+<svg aria-roledescription="flowchart-v2" role="graphics-document document" viewbox="-8 -8 830 859.75" style="; display: block; margin: auto auto auto auto" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="57600" id="mermaid-figure-2" height="76800">
+<style>#mermaid-figure-2{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-2 .error-icon{fill:#552222;}#mermaid-figure-2 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-2 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-2 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-2 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-2 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-2 .marker.cross{stroke:#333333;}#mermaid-figure-2 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-2 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-figure-2 .cluster-label text{fill:#333;}#mermaid-figure-2 .cluster-label span,#mermaid-figure-2 p{color:#333;}#mermaid-figure-2 .label text,#mermaid-figure-2 span,#mermaid-figure-2 p{fill:#333;color:#333;}#mermaid-figure-2 .node rect,#mermaid-figure-2 .node circle,#mermaid-figure-2 .node ellipse,#mermaid-figure-2 .node polygon,#mermaid-figure-2 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-figure-2 .flowchart-label text{text-anchor:middle;}#mermaid-figure-2 .node .label{text-align:center;}#mermaid-figure-2 .node.clickable{cursor:pointer;}#mermaid-figure-2 .arrowheadPath{fill:#333333;}#mermaid-figure-2 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-figure-2 .flowchart-link{stroke:#333333;fill:none;}#mermaid-figure-2 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-figure-2 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-figure-2 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-figure-2 .cluster text{fill:#333;}#mermaid-figure-2 .cluster span,#mermaid-figure-2 p{color:#333;}#mermaid-figure-2 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-figure-2 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-2 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g><marker orient="auto" markerheight="12" markerwidth="12" markerunits="userSpaceOnUse" refy="5" refx="10" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerheight="12" markerwidth="12" markerunits="userSpaceOnUse" refy="5" refx="0" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="11" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="-1" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="12" viewbox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="-1" viewbox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"><g id="c" class="cluster default flowchart-label"><rect height="246.25" width="542" y="0" x="272" ry="0" rx="0" style=""></rect><g transform="translate(485, 0)" class="cluster-label"><foreignobject height="22" width="116">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">model selection</span>
+</div>
+</foreignobject></g></g><g id="b" class="cluster default flowchart-label"><rect height="480.25" width="222" y="105.5" x="0" ry="0" rx="0" style=""></rect><g transform="translate(37.5, 105.5)" class="cluster-label"><foreignobject height="22" width="147">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">finetune parameters</span>
+</div>
+</foreignobject></g></g><g id="a" class="cluster default flowchart-label"><rect height="238" width="814" y="605.75" x="0" ry="0" rx="0" style=""></rect><g transform="translate(379, 605.75)" class="cluster-label"><foreignobject height="22" width="56">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">training</span>
+</div>
+</foreignobject></g></g></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-D" id="L-A-D-0" d="M182.5,737.25L189.08333333333334,737.25C195.66666666666666,737.25,208.83333333333334,737.25,219.58333333333334,737.25C230.33333333333334,737.25,238.66666666666666,737.25,247,737.25C255.33333333333334,737.25,263.6666666666667,737.25,275.5,733.1281362007168C287.3333333333333,729.0062724014336,302.6666666666667,720.7625448028674,310.3333333333333,716.6406810035842L318,712.5188172043011"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-B" id="L-D-B-0" d="M412,687.25L419.6666666666667,687.25C427.3333333333333,687.25,442.6666666666667,687.25,454.5,687.25C466.3333333333333,687.25,474.6666666666667,687.25,478.8333333333333,687.25L483,687.25"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" id="L-B-C-0" d="M646,687.25L650.1666666666666,687.25C654.3333333333334,687.25,662.6666666666666,687.25,671,687.25C679.3333333333334,687.25,687.6666666666666,687.25,691.8333333333334,687.25L696,687.25"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-D" id="L-E-D-0" d="M166.5,179.375L175.75,182.22916666666666C185,185.08333333333334,203.5,190.79166666666666,216.91666666666666,267.1041666666667C230.33333333333334,343.4166666666667,238.66666666666666,490.3333333333333,247,563.7916666666666C255.33333333333334,637.25,263.6666666666667,637.25,275.5,641.3718637992832C287.3333333333333,645.4937275985664,302.6666666666667,653.7374551971326,310.3333333333333,657.8593189964158L318,661.9811827956989"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-D" id="L-F-D-0" d="M158.5,249.25L169.08333333333334,249.25C179.66666666666666,249.25,200.83333333333334,249.25,215.58333333333334,317.25C230.33333333333334,385.25,238.66666666666666,521.25,247,589.25C255.33333333333334,657.25,263.6666666666667,657.25,275.5,659.7231182795699C287.3333333333333,662.1962365591398,302.6666666666667,667.1424731182796,310.3333333333333,669.6155913978495L318,672.0887096774194"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-D" id="L-G-D-0" d="M174.5,336.25L182.41666666666666,336.25C190.33333333333334,336.25,206.16666666666666,336.25,218.25,393.0833333333333C230.33333333333334,449.9166666666667,238.66666666666666,563.5833333333334,247,620.4166666666666C255.33333333333334,677.25,263.6666666666667,677.25,275.5,678.0743727598566C287.3333333333333,678.8987455197133,302.6666666666667,680.5474910394265,310.3333333333333,681.3718637992832L318,682.1962365591398"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-H LE-D" id="L-H-D-0" d="M152,423.25L163.66666666666666,423.25C175.33333333333334,423.25,198.66666666666666,423.25,214.5,468.9166666666667C230.33333333333334,514.5833333333334,238.66666666666666,605.9166666666666,247,651.5833333333334C255.33333333333334,697.25,263.6666666666667,697.25,275.5,696.4256272401434C287.3333333333333,695.6012544802867,302.6666666666667,693.9525089605735,310.3333333333333,693.1281362007168L318,692.3037634408602"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-I LE-D" id="L-I-D-0" d="M197,521.25L201.16666666666666,521.25C205.33333333333334,521.25,213.66666666666666,521.25,222,553.9166666666666C230.33333333333334,586.5833333333334,238.66666666666666,651.9166666666666,247,684.5833333333334C255.33333333333334,717.25,263.6666666666667,717.25,275.5,714.7768817204301C287.3333333333333,712.3037634408602,302.6666666666667,707.3575268817203,310.3333333333333,704.8844086021505L318,702.4112903225806"></path><path marker-end="url(#flowchart-pointEnd)" marker-start="url(#flowchart-pointStart)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-J LE-C" id="L-J-C-0" d="M418.0144927536232,181.75L424.67874396135267,185.45833333333334C431.34299516908214,189.16666666666666,444.6714975845411,196.58333333333334,469.0857487922705,200.29166666666666C493.5,204,529,204,564.5,204C600,204,635.5,204,664.032351954524,276.87512702131056C692.5647039090478,349.7502540426212,714.1294078180958,495.5005080852423,724.9117597726198,568.375635106553L735.6941117271438,641.2507621278635"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-J LE-K" id="L-J-K-0" d="M419.5970149253731,122.75L425.99751243781094,119.29166666666667C432.3980099502487,115.83333333333333,445.19900497512435,108.91666666666667,458.26616915422886,105.54166666666667C471.3333333333333,102.16666666666667,484.6666666666667,102.33333333333333,491.3333333333333,102.41666666666667L498,102.5"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-K LE-L" id="L-K-L-0" d="M632,102.5L638.5,102.41666666666667C645,102.33333333333333,658,102.16666666666667,673.8333333333334,102.08333333333333C689.6666666666666,102,708.3333333333334,102,717.6666666666666,102L727,102"></path><path marker-end="url(#flowchart-pointEnd)" style="stroke-width: 3.5px;fill:none;" class="edge-thickness-thick edge-pattern-solid flowchart-link LS-b LE-c" id="L-b-c-0" d="M222,152.25L226.16666666666666,152.25C230.33333333333334,152.25,238.66666666666666,152.25,247,152.25C255.33333333333334,152.25,263.6666666666667,152.25,267.8333333333333,152.25L272,152.25"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="edgeLabel"></span>
+</div>
+</foreignobject></g></g></g><g class="nodes"><g transform="translate(365, 152.25)" id="flowchart-J-56" class="node default default flowchart-label"><rect height="59" width="136" y="-29.5" x="-68" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-60.5, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="121">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">manual labelled <br> coordinate</span>
+</div>
+</foreignobject></g></g><g transform="translate(742.5, 102)" id="flowchart-L-60" class="node default default flowchart-label"><rect height="37" width="31" y="-18.5" x="-15.5" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-8, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="16">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">F1</span>
+</div>
+</foreignobject></g></g><g transform="translate(564.5, 102)" id="flowchart-K-59" class="node default default flowchart-label"><polygon style="" transform="translate(-67,67)" class="label-container" points="67,0 134,-67 67,-134 0,-67"></polygon><g transform="translate(-30, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="60">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">distance<br>&lt;3.3</span>
+</div>
+</foreignobject></g></g><g transform="translate(111, 162.25)" id="flowchart-E-46" class="node default default flowchart-label"><rect height="37" width="111" y="-18.5" x="-55.5" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-48, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="96">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">Coco weights</span>
+</div>
+</foreignobject></g></g><g transform="translate(111, 249.25)" id="flowchart-F-48" class="node default default flowchart-label"><rect height="37" width="95" y="-18.5" x="-47.5" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-40, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="80">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">40 epoches</span>
+</div>
+</foreignobject></g></g><g transform="translate(111, 336.25)" id="flowchart-G-50" class="node default default flowchart-label"><rect height="37" width="127" y="-18.5" x="-63.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-56, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="112">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">Adam optimiser</span>
+</div>
+</foreignobject></g></g><g transform="translate(111, 423.25)" id="flowchart-H-52" class="node default default flowchart-label"><rect height="37" width="82" y="-18.5" x="-41" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-33.5, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="67">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">focal loss</span>
+</div>
+</foreignobject></g></g><g transform="translate(111, 521.25)" id="flowchart-I-54" class="node default default flowchart-label"><rect height="59" width="172" y="-29.5" x="-86" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-78.5, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="157">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">lr e-4, <br> 0.5 decay/20 epoches</span>
+</div>
+</foreignobject></g></g><g transform="translate(742.5, 687.25)" id="flowchart-C-45" class="node default default flowchart-label"><circle height="59" width="93" r="46.5" ry="0" rx="0" style=""></circle><g transform="translate(-39, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="78">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">centroid <br> coordinate</span>
+</div>
+</foreignobject></g></g><g transform="translate(564.5, 687.25)" id="flowchart-B-44" class="node default default flowchart-label"><rect height="37" width="163" y="-18.5" x="-81.5" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-74, -11)" style="" class="label"><rect></rect><foreignobject height="22" width="148">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">nuclei bounding box</span>
+</div>
+</foreignobject></g></g><g transform="translate(365, 687.25)" id="flowchart-D-43" class="node default default flowchart-label"><rect height="59" width="94" y="-29.5" x="-47" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-39.5, -22)" style="" class="label"><rect></rect><foreignobject height="44" width="79">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">RetinaNet <br> ResNet-101</span>
+</div>
+</foreignobject></g></g><g transform="translate(111, 737.25)" id="flowchart-A-42" class="node default default flowchart-label"><circle height="81" width="143" r="71.5" ry="0" rx="0" style=""></circle><g transform="translate(-64, -33)" style="" class="label"><rect></rect><foreignobject height="66" width="128">
+<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
+<span class="nodeLabel">data from <br> image processing <br> module</span>
+</div>
+</foreignobject></g></g></g></g></g>
+</svg>
 </div>
 <p></p></figure><p></p>
 </div>
